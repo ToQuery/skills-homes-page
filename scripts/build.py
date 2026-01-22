@@ -9,10 +9,11 @@ OUTPUT_DIR = 'docs'
 
 import datetime
 
-# ... (Previous constants)
-DOMAIN = os.getenv("DOMAIN", "https://toquery.github.io")
+import argparse
 
-URI_PREFIX = os.getenv("URI_PREFIX", "/skills-homes-page")
+# ... (Previous constants)
+DEFAULT_DOMAIN = "https://toquery.github.io"
+DEFAULT_URI_PREFIX = "/skills-homes-page"
 
 def load_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -26,7 +27,32 @@ def save_file(filepath, content):
     print(f"Generated: {filepath}")
 
 def main():
-    print(f"Using Domain: {DOMAIN}")
+    parser = argparse.ArgumentParser(description='Build Skills.Homes static site.')
+    parser.add_argument('--domain', help='Domain for sitemap and robots.txt (e.g., https://example.com)')
+    parser.add_argument('--uri-prefix', help='URI prefix for links (e.g., /repo-name)')
+
+    args = parser.parse_args()
+
+    # Precedence: CLI Args > Env Vars > Defaults
+    # We use (val is not None) check to allow explicit empty strings ("")
+
+    if args.domain is not None:
+        domain = args.domain
+    else:
+        domain = os.getenv("DOMAIN", DEFAULT_DOMAIN)
+
+    if args.uri_prefix is not None:
+        uri_prefix = args.uri_prefix
+    else:
+        uri_prefix = os.getenv("URI_PREFIX", DEFAULT_URI_PREFIX)
+
+    # Ensure uri_prefix starts with / if not empty and not http(s)
+    if uri_prefix and not uri_prefix.startswith('/') and not uri_prefix.startswith('http'):
+         uri_prefix = '/' + uri_prefix
+
+    print(f"Using Domain: {domain}")
+    print(f"Using URI Prefix: {uri_prefix}")
+
     # Load template and locales
     template = load_file(TEMPLATE_FILE)
     locales = json.loads(load_file(LOCALES_FILE))
@@ -42,17 +68,24 @@ def main():
         # Determine output path, URL, and path_prefix
         if lang == DEFAULT_LANG:
             output_path = os.path.join(OUTPUT_DIR, 'index.html')
-            # For sitemap, we use relative URL from root
-            url = f"{DOMAIN}/index.html"
+            # For sitemap, we use absolute URL
+            url = f"{domain}{uri_prefix}/index.html"
         else:
             output_path = os.path.join(OUTPUT_DIR, lang, 'index.html')
-            url = f"{DOMAIN}/{lang}/index.html"
+            url = f"{domain}{uri_prefix}/{lang}/index.html"
+
+        # Clean up double slashes in URL if any (except protocol)
+        # url = re.sub(r'(?<!:)//', '/', url)
 
         # Replace placeholders
         content = template
 
-        # Inject computed path_prefix
-        content = content.replace("{{ path_prefix }}", URI_PREFIX)
+        # Inject computed seo_canonical
+        content = content.replace("{{ seo_canonical }}", f"{domain}{uri_prefix}/index.html")
+
+        # Inject computed uri_prefix
+        content = content.replace("{{ domain }}", domain)
+        content = content.replace("{{ uri_prefix }}", uri_prefix)
 
         for key, value in data.items():
             placeholder = f"{{{{ {key} }}}}"
@@ -80,7 +113,7 @@ def main():
     print("Sitemap generated.")
 
     # Generate robots.txt
-    robots_content = f"User-agent: *\nAllow: /\n\nSitemap: {DOMAIN + URI_PREFIX}/sitemap.xml\n"
+    robots_content = f"User-agent: *\nAllow: /\n\nSitemap: {domain}{uri_prefix}/sitemap.xml\n"
     save_file(os.path.join(OUTPUT_DIR, 'robots.txt'), robots_content)
     print("robots.txt generated.")
 

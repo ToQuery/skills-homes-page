@@ -8,15 +8,15 @@
     <meta name="description" content="{{ meta_description }}">
     <meta name="keywords" content="{{ meta_keywords }}">
 
-    <link rel="canonical" href="">
+    <link rel="canonical" href="{{ seo_canonical }}">
 
     <!-- Alternate Links for SEO -->
-    <link rel="alternate" hreflang="en" href="{{ path_prefix }}/index.html" />
-    <link rel="alternate" hreflang="zh-CN" href="{{ path_prefix }}/zh-CN/index.html" />
-    <link rel="alternate" hreflang="zh-HK" href="{{ path_prefix }}/zh-HK/index.html" />
-    <link rel="alternate" hreflang="zh-TW" href="{{ path_prefix }}/zh-TW/index.html" />
-    <link rel="alternate" hreflang="ja" href="{{ path_prefix }}/ja/index.html" />
-    <link rel="alternate" hreflang="ko" href="{{ path_prefix }}/ko/index.html" />
+    <link rel="alternate" hreflang="en" href="{{ domain }}{{ uri_prefix }}/index.html" />
+    <link rel="alternate" hreflang="zh-CN" href="{{ domain }}{{ uri_prefix }}/zh-CN/index.html" />
+    <link rel="alternate" hreflang="zh-HK" href="{{ domain }}{{ uri_prefix }}/zh-HK/index.html" />
+    <link rel="alternate" hreflang="zh-TW" href="{{ domain }}{{ uri_prefix }}/zh-TW/index.html" />
+    <link rel="alternate" hreflang="ja" href="{{ domain }}{{ uri_prefix }}/ja/index.html" />
+    <link rel="alternate" hreflang="ko" href="{{ domain }}{{ uri_prefix }}/ko/index.html" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -84,17 +84,17 @@
                         </button>
                         <div
                             class="lang-menu absolute right-0 top-full mt-0 w-32 bg-white rounded-md shadow-lg py-1 hidden ring-1 ring-black ring-opacity-5 z-50">
-                            <a href="{{ path_prefix }}/index.html"
+                            <a href="{{ uri_prefix }}/index.html"
                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
-                            <a href="{{ path_prefix }}/zh-CN/index.html"
+                            <a href="{{ uri_prefix }}/zh-CN/index.html"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">简体中文</a>
-                            <a href="{{ path_prefix }}/zh-HK/index.html"
+                            <a href="{{ uri_prefix }}/zh-HK/index.html"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">繁體中文 (HK)</a>
-                            <a href="{{ path_prefix }}/zh-TW/index.html"
+                            <a href="{{ uri_prefix }}/zh-TW/index.html"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">繁體中文 (TW)</a>
-                            <a href="{{ path_prefix }}/ja/index.html"
+                            <a href="{{ uri_prefix }}/ja/index.html"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">日本語</a>
-                            <a href="{{ path_prefix }}/ko/index.html"
+                            <a href="{{ uri_prefix }}/ko/index.html"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">한국어</a>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="md:flex md:items-center md:justify-between">
                 <div class="flex justify-center md:justify-start space-x-6 md:order-2">
-                    <a href="{{ path_prefix }}" class="text-gray-400 hover:text-white">
+                    <a href="{{ uri_prefix }}" class="text-gray-400 hover:text-white">
                         Index
                     </a>
                     <a href="https://skills.homes" class="text-gray-400 hover:text-white">
