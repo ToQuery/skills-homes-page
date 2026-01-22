@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills.Homes - 70,000+ Claude Skills 聚合平台 | 發現、搜尋、復用優質 Skills</title>
+    <meta name="description" content="Skills.Homes 是全球領先的 Claude Skills 發現與聚合平台。收錄 70,000+ 個來自 GitHub 的優質 Skills，覆蓋開發工具、數據分析、AI 輔助、DevOps 等全領域。">
+    <meta name="keywords" content="Claude Skills, Skills Marketplace, MCP, AI Skills, 開發者工具, GitHub Skills, Skills.Homes">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://skills.homes/docs/zh-HK/">
+    <meta property="og:title" content="Skills.Homes - 70,000+ Claude Skills 聚合平台">
+    <meta property="og:description" content="發現 70,000+ 個 Claude Skills 的寶藏入口。支持全網搜尋、智能分類。">
+    <meta property="og:image" content="https://skills.homes/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://skills.homes/docs/zh-HK/">
+    <meta property="twitter:title" content="Skills.Homes - 70,000+ Claude Skills 聚合平台">
+    <meta property="twitter:description" content="發現 70,000+ 個 Claude Skills 的寶藏入口。支持全網搜尋、智能分類。">
+
+    <link rel="canonical" href="https://skills.homes/docs/zh-HK/">
+
+    <!-- Alternate Links for SEO -->
+    <link rel="alternate" hreflang="zh-CN" href="https://skills.homes/docs/index.html" />
+    <link rel="alternate" hreflang="zh-HK" href="https://skills.homes/docs/zh-HK/index.html" />
+    <link rel="alternate" hreflang="zh-TW" href="https://skills.homes/docs/zh-TW/index.html" />
+    <link rel="alternate" hreflang="en" href="https://skills.homes/docs/en/index.html" />
+    <link rel="alternate" hreflang="ja" href="https://skills.homes/docs/ja/index.html" />
+    <link rel="alternate" hreflang="ko" href="https://skills.homes/docs/ko/index.html" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Language Dropdown */
+        .lang-dropdown:hover .lang-menu {
+            display: block;
+        }
+
+        /* Ensure no gap between button and menu */
+        .lang-menu {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="https://skills.homes" class="flex-shrink-0 flex items-center">
+                        <span
+                            class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Skills.Homes</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Language Switcher -->
+                    <div class="relative lang-dropdown hidden sm:block py-4">
+                        <button class="flex items-center text-gray-500 hover:text-blue-600 focus:outline-none">
+                            <span class="mr-1">🌐</span> 繁體中文 (HK)
+                        </button>
+                        <div
+                            class="lang-menu absolute right-0 top-full mt-0 w-32 bg-white rounded-md shadow-lg py-1 hidden ring-1 ring-black ring-opacity-5 z-50">
+                            <a href="../index.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">简体中文</a>
+                            <a href="../zh-HK/index.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">繁體中文 (HK)</a>
+                            <a href="../zh-TW/index.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">繁體中文 (TW)</a>
+                            <a href="../en/index.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</a>
+                            <a href="../ja/index.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">日本語</a>
+                            <a href="../ko/index.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">한국어</a>
+                        </div>
+                    </div>
+
+                    <a href="https://skills.homes"
+                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                        進入主站
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                            <span class="block xl:inline">發現 Claude Skills 的</span>
+                            <span class="block text-blue-600 xl:inline">最佳入口</span>
+                        </h1>
+                        <p
+                            class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            <strong>Skills.Homes</strong> 是最全的 Skills Marketplace。整理了 <strong>70,000+</strong> 個 Skills，助你打破 AI 使用邊界，像搭積木一樣構建你的工作流。
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="https://skills.homes"
+                                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg transition-all">
+                                    開始探索 Skills
+                                </a>
+                            </div>
+                            <div class="mt-3 sm:mt-0 sm:ml-3">
+                                <a href="https://skills.homes/about"
+                                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg transition-all">
+                                    了解更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-gray-50 flex items-center justify-center">
+            <div class="p-8 text-center opacity-50">
+                <div class="text-9xl mb-4">🧩</div>
+                <div class="text-2xl font-bold text-gray-400">70,000+ Modules</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features / Value Prop -->
+    <div class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">Why Skills.Homes?</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    解決 Skills "發現難" 的痛點
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    Claude Skills 極其強大，但往往分散在 GitHub 各個角落。我們為您統一索引、智能分類。
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+                    <div class="relative">
+                        <dt>
+                            <div
+                                class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
+                            </div>
+                            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">數據全</p>
+                        </dt>
+                        <dd class="mt-2 ml-16 text-base text-gray-500">
+                            數據全部來源於 GitHub 開源倉庫，實時更新。不再錯過任何一個新興的高質量 Skill。
+                        </dd>
+                    </div>
+
+                    <div class="relative">
+                        <dt>
+                            <div
+                                class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                </svg>
+                            </div>
+                            <p class="ml-16 text-lg leading-6 font-medium text-gray-900">分類準</p>
+                        </dt>
+                        <dd class="mt-2 ml-16 text-base text-gray-500">
+                            支持按“實際用途”分類查找，而非冰冷的技術標籤。無論是作為 Developer 尋找工具，還是作為 Creator 尋找靈感，都能快速定位。
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Preview Grid -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">熱門分類</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <a href="https://skills.homes/category/devtools"
+                class="feature-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 block hover:shadow-md transition-shadow">
+                <div class="text-3xl mb-4">🛠️</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">DevTools</h3>
+                <p class="text-gray-500 text-sm">代碼生成、調試輔助、Git 工作流自動化等開發者必備神器。</p>
+            </a>
+
+            <a href="https://skills.homes/category/data-ai"
+                class="feature-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 block hover:shadow-md transition-shadow">
+                <div class="text-3xl mb-4">🤖</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Data & AI</h3>
+                <p class="text-gray-500 text-sm">數據清洗、大模型微調、RAG 知識庫構建等前沿 AI 能力。</p>
+            </a>
+
+            <a href="https://skills.homes/category/devops"
+                class="feature-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 block hover:shadow-md transition-shadow">
+                <div class="text-3xl mb-4">🚀</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">DevOps</h3>
+                <p class="text-gray-500 text-sm">Docker 管理、CI/CD 流程優化、伺服器監控等運維工具。</p>
+            </a>
+
+            <a href="https://skills.homes/category/business"
+                class="feature-card bg-white rounded-lg shadow-sm border border-gray-100 p-6 block hover:shadow-md transition-shadow">
+                <div class="text-3xl mb-4">💼</div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Business</h3>
+                <p class="text-gray-500 text-sm">市場分析、報告生成、郵件自動化等商務效率提升工具。</p>
+            </a>
+
+        </div>
+
+        <div class="mt-12 text-center">
+            <a href="https://skills.homes"
+                class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-blue-50 hover:bg-blue-100 md:text-lg">
+                查看全部 70,000+ Skills &rarr;
+            </a>
+        </div>
+    </div>
+
+    <!-- Content SEO Section -->
+    <div class="bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+            <article class="prose lg:prose-xl mx-auto">
+                <h2>Claude Skills 為什麼重要？</h2><p>相比於複雜的 MCP (Model Context Protocol) 開發，<strong>Skill</strong> 以 Markdown 為核心，更易於閱讀、學習和復用。它是 Claude Code 用戶擴展 AI 能力最直接的方式。</p><p>許多開發者已經習慣將自己的 Prompt Engineering 經驗沉澱為 Skill。但在 <strong>Skills.Homes</strong> 出現之前，復用這些經驗非常困難。你需要漫遊在 GitHub 的海量倉庫中，不僅效率低，而且很難判斷質量。</p><h2>Skills.Homes 解決了什麼？</h2><p>我們做了一件事：<strong>連接</strong>。</p><ul><li>連接了 GitHub 上分散的 Skills 資源。</li><li>連接了在此尋找解決方案的開發者。</li><li>連接了不同的使用場景和對應的最佳實踐。</li></ul><p>無論你是想優化 coding 效率，還是尋找內容創作的靈感，在 <a href='https://skills.homes'>Skills.Homes</a> 總能找到讓你眼前一亮的工具。</p>
+            </article>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:justify-start space-x-6 md:order-2">
+                    <a href="https://skills.homes" class="text-gray-400 hover:text-white">
+                        Home
+                    </a>
+                    <a href="https://github.com/topics/claude-skills" class="text-gray-400 hover:text-white">
+                        GitHub Topic
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-base text-gray-400">
+                        &copy; 2026 Skills.Homes. All specific trademarks are properties of their respective owners.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
