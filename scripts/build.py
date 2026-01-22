@@ -32,24 +32,31 @@ def main():
 
     sitemap_urls = []
     current_date = datetime.date.today().isoformat()
-
-    # Add root URL manually (optional, but good for completeness if it maps to docs)
-    # sitemap_urls.append((f"{HOSTNAME}/", current_date))
+    DEFAULT_LANG = 'en'
 
     for lang, data in locales.items():
+        
+        # Determine output path, URL, and path_prefix
+        if lang == DEFAULT_LANG:
+            output_path = os.path.join(OUTPUT_DIR, 'index.html')
+            path_prefix = "./"
+            # For sitemap, we use relative URL from root
+            url = "/index.html"
+        else:
+            output_path = os.path.join(OUTPUT_DIR, lang, 'index.html')
+            path_prefix = "../"
+            url = f"/{lang}/index.html"
+        
         # Replace placeholders
         content = template
+        
+        # Inject computed path_prefix
+        content = content.replace("{{ path_prefix }}", path_prefix)
+
         for key, value in data.items():
             placeholder = f"{{{{ {key} }}}}"
             content = content.replace(placeholder, value)
         
-        # Determine output path & URL
-        if lang == 'zh-CN':
-            output_path = os.path.join(OUTPUT_DIR, 'index.html')
-            url = "/docs/index.html"
-        else:
-            output_path = os.path.join(OUTPUT_DIR, lang, 'index.html')
-            url = f"/docs/{lang}/index.html"
         
         save_file(output_path, content)
         sitemap_urls.append((url, current_date))

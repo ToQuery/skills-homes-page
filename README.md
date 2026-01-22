@@ -25,30 +25,6 @@
 - **🌍 Multi-language Support**: Optimized for English, Chinese (Simplified/Traditional), Japanese, and Korean users.
 - **⚡️ Fast & Clean**: A developer-focused, distraction-free interface.
 
-## 📂 Project Structure / 项目结构
-
-This repository hosts the static landing page for the project, optimized for SEO and global reach.
-
-- `docs/`: The static site root (GitHub Pages).
-    - `index.html`: Simplified Chinese Landing Page.
-    - `en/`: English Landing Page.
-    - `ja/`: Japanese Landing Page.
-    - `...`: Other languages.
-- `scripts/`: Build tools.
-    - `build.py`: Generates the static HTMLs and `sitemap.xml`.
-    - `template.html`: The master design template.
-    - `locales.json`: Translation data.
-
-## 🛠 Development / 开发指南
-
-To build the static pages locally:
-
-```bash
-# Ensure you have python3 installed
-python3 scripts/build.py
-```
-
-This will regenerate all HTML files in the `docs/` directory based on the template and locale data.
 
 ## 🔗 Resources / 资源
 
